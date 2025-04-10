@@ -1,6 +1,6 @@
 FROM node:14 AS web-build
 WORKDIR /app
-COPY ./ ./client
+RUN git clone https://github.com/Akshat-pixel/client.git
 RUN cd client && npm install && npm run build --prod
 
 # Use official nginx image as the base image
